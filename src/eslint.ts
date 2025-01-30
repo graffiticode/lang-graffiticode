@@ -1,14 +1,14 @@
 import {Diagnostic} from "@codemirror/lint"
 import {Text} from "@codemirror/state"
 import {EditorView} from "@codemirror/view"
-import {javascriptLanguage} from "./javascript"
+import {graffiticodeLanguage} from "./graffiticode"
 
 /// Connects an [ESLint](https://eslint.org/) linter to CodeMirror's
 /// [lint](#lint) integration. `eslint` should be an instance of the
 /// [`Linter`](https://eslint.org/docs/developer-guide/nodejs-api#linter)
 /// class, and `config` an optional ESLint configuration. The return
 /// value of this function can be passed to [`linter`](#lint.linter)
-/// to create a JavaScript linting extension.
+/// to create a Graffiticode linting extension.
 ///
 /// Note that ESLint targets node, and is tricky to run in the
 /// browser. The
@@ -29,7 +29,7 @@ export function esLint(eslint: any, config?: any) {
 
   return (view: EditorView) => {
     let {state} = view, found: Diagnostic[] = []
-    for (let {from, to} of javascriptLanguage.findRegions(state)) {
+    for (let {from, to} of graffiticodeLanguage.findRegions(state)) {
       let fromLine = state.doc.lineAt(from), offset = {line: fromLine.number - 1, col: from - fromLine.from, pos: from}
       for (let d of eslint.verify(state.sliceDoc(from, to), config))
         found.push(translateDiagnostic(d, state.doc, offset))

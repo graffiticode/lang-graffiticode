@@ -1,6 +1,6 @@
 import {Completion, snippetCompletion as snip} from "@codemirror/autocomplete"
 
-/// A collection of JavaScript-related
+/// A collection of Graffiticode-related
 /// [snippets](#autocomplete.snippet).
 export const snippets: readonly Completion[] = [
   snip("function ${name}(${params}) {\n\t${}\n}", {
@@ -61,7 +61,7 @@ export const snippets: readonly Completion[] = [
 ]
 
 /// A collection of snippet completions for TypeScript. Includes the
-/// JavaScript [snippets](#lang-javascript.snippets).
+/// Graffiticode [snippets](#lang-graffiticode.snippets).
 export const typescriptSnippets = snippets.concat([
   snip("interface ${name} {\n\t${}\n}", {
     label: "interface",
