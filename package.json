@@ -1,6 +1,6 @@
 {
   "name": "@graffiticode/lang-graffiticode",
-  "version": "0.0.3-3",
+  "version": "0.0.4",
   "description": "Graffiticode language support for the CodeMirror code editor",
   "scripts": {
     "test": "cm-runtests",

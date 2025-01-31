@@ -24,14 +24,7 @@ const functionContext = ["FunctionDeclaration"]
 const gatherCompletions: {
   [node: string]: (node: SyntaxNodeRef, def: (node: SyntaxNodeRef, type: string) => void) => void | boolean
 } = {
-  FunctionDeclaration: defID("function"),
-  ClassDeclaration: defID("class"),
-  ClassExpression: () => true,
-  EnumDeclaration: defID("constant"),
-  TypeAliasDeclaration: defID("type"),
-  NamespaceDeclaration: defID("namespace"),
   VariableDefinition(node, def) { if (!node.matchContext(functionContext)) def(node, "variable") },
-  TypeDefinition(node, def) { def(node, "type") },
   __proto__: null as any
 }
 
