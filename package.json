@@ -31,7 +31,7 @@
     "@codemirror/lint": "^6.0.0",
     "@codemirror/state": "^6.0.0",
     "@codemirror/view": "^6.17.0",
-    "@graffiticode/lezer-graffiticode": "file:../lezer-graffiticode",
+    "@graffiticode/lezer-graffiticode": "^0.0.3",
     "@lezer/common": "^1.0.0"
   },
   "devDependencies": {
